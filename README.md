@@ -22,3 +22,8 @@ The Cloud9 IDE team
 
 Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
 To watch some training videos, visit http://www.youtube.com/user/c9ide
+
+
+Some useful links:
+
+Dynamic CSS:  http://stackoverflow.com/questions/27447811/how-to-create-dynamic-css-based-on-user-input
