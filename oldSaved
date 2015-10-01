@@ -1,0 +1,43 @@
+from views/layouts/application.html.erb
+<%= yield :stylesheet_includes %>
+
+
+
+from controllers/pages_controller.rb
+
+respond_to do |format|
+    format.html
+    format.css
+end
+
+
+
+from views/pages/index.html.erb
+
+<% content_for :stylesheet_includes do %>
+  <%= stylesheet_link_tag(index_path(@photos, format: :css), media: "all") %>
+<% end %>
+
+<% i = 1 %>
+<% @photos.each do |p| %>
+    <% stringclass = "jumbotron jumbotron" + i.to_s %>
+    <div class="<%= stringclass %>">
+        Room Contents Here
+    </div>
+    <% i = i + 1 %>
+<% end %>
+
+
+
+from views/pages/index.css.erb
+<% i = 1 %>
+<% @photos.each do |p| %>
+    <% stringcolor = "color" + i.to_s %>
+    <% stringcolorsym = stringcolor.to_sym %>
+    <% stringclass = ".jumbotron" + i.to_s %>
+    <%= stringclass %> {
+
+      background-image: url(<%= image_path "jumbotron/#{p.split('/').last}" %>)
+    }
+    <% i = i + 1 %>
+<% end %>

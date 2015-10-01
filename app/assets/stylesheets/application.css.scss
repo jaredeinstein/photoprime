@@ -13,12 +13,43 @@
  *= require_tree .
  *= require_self
  */
+ 
+body {
+    // background: rgba(255,255,255,1);
+    // background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(235,235,235,1) 100%);
+    // background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(235,235,235,1)));
+    // background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(235,235,235,1) 100%);
+    // background: -o-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(235,235,235,1) 100%);
+    // background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(235,235,235,1) 100%);
+    // background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%, rgba(235,235,235,1) 100%);
+    // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ebebeb', GradientType=1 );
+background: rgba(255,255,255,1);
+background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 67%, rgba(143,143,143,1) 100%);
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255,255,255,1)), color-stop(67%, rgba(222,222,222,1)), color-stop(100%, rgba(143,143,143,1)));
+background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 67%, rgba(143,143,143,1) 100%);
+background: -o-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 67%, rgba(143,143,143,1) 100%);
+background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 67%, rgba(143,143,143,1) 100%);
+background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 67%, rgba(143,143,143,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#8f8f8f', GradientType=1 );
+}
 
-h2.lower, p.lower {
+.left>h2, .left>h5, .left>p {
+    margin-bottom: 0rem;
+}
+
+.right>h2, .left>h5, .right>p {
+    margin-bottom: 1.5rem;
+}
+
+div.split>div:last-child {
+    margin-bottom: 4.5rem;
+}
+
+h2.lower, h5.lower, p.lower {
     text-transform: lowercase;
 }
 
-h2.upper, p.upper {
+h2.upper, h5.upper, p.upper {
     text-transform: uppercase;
 }
 
@@ -26,13 +57,24 @@ h2.upper, p.upper {
     text-align: center;
 }
 
+.polaroidbottom {
+    background-color: white;
+}
+
 .jumbotron {
-    height: 25rem;
-    margin-bottom: 2rem;
-    background-color: rgba(0, 255, 0, 0.3);
-    background-image: image-url("jumbotron/sunWeb.jpg");
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    padding: 66.667% 0 0 0;
+    margin-bottom: 0rem;
     background-size: cover;
-    
+    border: 15px solid white;
+}
+
+.gray {
+    color: gray;
 }
 
 
@@ -43,12 +85,20 @@ h2.upper, p.upper {
 
 /* Larger than phablet */
 @media (min-width: 550px) {
-     h2.lower, p.lower {
+    .right>h2, .right>h5, .right>p {
+        margin-bottom: 0.5rem;
+    }
+    
+    h2.lower, h5.lower, p.lower {
         float: right;
     }
     
-    h2.upper, p.upper {
+    h2.upper, h5.upper, p.upper {
         float: left;
+    }
+    
+    .right {
+        margin-left: 1%;
     }
 }
 
