@@ -13,3 +13,131 @@
  *= require_tree .
  *= require_self
  */
+ 
+/* background graident */
+body {
+    background: rgba(255,255,255,1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 67%, rgba(143,143,143,1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255,255,255,1)), color-stop(67%, rgba(222,222,222,1)), color-stop(100%, rgba(143,143,143,1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 67%, rgba(143,143,143,1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 67%, rgba(143,143,143,1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 67%, rgba(143,143,143,1) 100%);
+    background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 67%, rgba(143,143,143,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#8f8f8f', GradientType=1 );
+}
+
+/* keep left text from bumping up or down */
+.left>h2, .left>h5, .left>p {
+    margin-bottom: 0;
+}
+
+/* distance between rows of split text separated - mobile */
+.right>h2, .right>h5, .right>p {
+    margin-bottom: 1rem;
+}
+
+/* add margin below title - mobile */
+div.title>div:last-child {
+    margin-bottom: 2rem;
+}
+
+/* add margin below polaroid - mobile */
+div.polaroid>div:last-child {
+    margin-bottom: 1rem;
+}
+
+/* make text lowercase */
+h2.lower, h5.lower, p.lower {
+    text-transform: lowercase;
+}
+
+/* make text uppercase */
+h2.upper, h5.upper, p.upper {
+    text-transform: uppercase;
+}
+
+/* center text within rows on - mobile */
+.center-text {
+    text-align: center;
+}
+
+/* polaroid background and margin */
+.polaroid {
+    background-color: white;
+    box-shadow: 7px 7px 14px 4px rgba(0,0,0,0.33);
+    margin-bottom: 4.5rem;
+}
+
+/* fix container sizing for polaroid - mobile */
+.container.polaroid {
+    padding: 0;
+    width: 90%;
+}
+
+/* give polaroid-bg div for image backgrounding of polaroid */
+.polaroid-bg {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    padding: 66.667% 0 0 0;
+    margin-bottom: 0;
+    background-size: cover;
+    border: 15px solid white;
+}
+
+/* gray text */
+.gray {
+    color: #92A0AD;
+}
+
+
+/* Mobile first queries */
+
+/* Larger than mobile */
+@media (min-width: 400px) {}
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+    /* distance between rows of split text separated - phablet */
+    .right>h2, .right>h5, .right>p {
+        margin-bottom: 0.5rem;
+    }
+    
+    /* add margin below title - phablet */
+    div.title>div:last-child {
+        margin-bottom: 4.5rem;
+    }
+
+    /* add margin below title - phablet */
+    div.polaroid>div:last-child {
+        margin-bottom: 1rem;
+    }
+    
+    /* right align text in left half and float - phablet */
+    h2.lower, h5.lower, p.lower {
+        text-align: right;
+        float: right;
+    }
+    
+    /* left align text in right half and float - phablet */
+    h2.upper, h5.upper, p.upper {
+        text-align: left;
+        float: left;
+    }
+    
+    /* fix spacing between split text -phablet */
+    .right {
+        margin-left: 1%;
+    }
+}
+
+/* Larger than tablet */
+@media (min-width: 750px) {}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}

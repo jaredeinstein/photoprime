@@ -1,54 +1,36 @@
-<div class="container split">
+<div class="container polaroid">
     <div class="row">
-        <%= link_to root_path do %>
-            <div class="six columns center-text left">
-                <h2 class="lower">Photo</h2>
-            </div>
-            <div class="six columns center-text right">
-                <h2 class="upper">Prime</h2>
-            </div>
-        <% end %>
+        <div class="twelve columns polaroid-bg" style="background-image: url('<%= image_path "polaroid-bg/sunWeb.jpg" %>');"></div>
     </div>
-</div>
-<div class="container polaroidbottom">
-<div class="container">
-    <div class="row polaroidbottom2">
-        <div class="twelve columns jumbotron" style="background-image: url('<%= image_path "jumbotron/sunWeb.jpg" %>');"></div>
-    </div>
-</div>
-<div class="container split">
-    <div class="row gray polaroidbottom2">
+    <div class="row gray">
         <div class="six columns center-text left"><p class="lower">author</p></div>
         <div class="six columns center-text right"><p class="upper">JARED</p></div>
     </div>
-    <div class="row gray polaroidbottom2">
-        <div class="six columns center-text left"><p class="lower">date</p></div>
-        <div class="six columns center-text right"><p class="upper">may 12</p></div>
+    <div class="row gray">
+        <div class="six columns center-text left"><p class="lower">date and some long text</p></div>
+        <div class="six columns center-text right"><p class="upper">may 12 and some even more long text for testing</p></div>
     </div>
-    <div class="row polaroidbottom2">
+    <div class="row">
         <div class="six columns center-text left"><p class="lower">album</p></div>
         <div class="six columns center-text right"><h5 class="upper">THE SUN</h5></div>
     </div>
 </div>
-</div>
 
 <% @photos.each do |p| %>
 <% name = "#{p.split('/').last}".html_safe %>
-<div class="container">
-    <div class="row polaroidbottom">
-        <div class="twelve columns jumbotron" style="background-image: url('<%= image_path "jumbotron/#{p.split('/').last}" %>');"></div>
+<div class="container polaroid">
+    <div class="row">
+        <div class="twelve columns polaroid-bg" style="background-image: url('<%= image_path "polaroid-bg/#{p.split('/').last}" %>');"></div>
     </div>
-</div>
-<div class="container split">
-    <div class="row gray polaroidbottom">
+    <div class="row gray">
         <div class="six columns center-text left"><p class="lower">author</p></div>
         <div class="six columns center-text right"><p class="upper">JARED or John</p></div>
     </div>
-    <div class="row gray polaroidbottom">
+    <div class="row gray">
         <div class="six columns center-text left"><p class="lower">date</p></div>
         <div class="six columns center-text right"><p class="upper">a while ago</p></div>
     </div>
-    <div class="row polaroidbottom">
+    <div class="row">
         <div class="six columns center-text left"><p class="lower">album</p></div>
         <div class="six columns center-text right"><h5 class="upper"><%= name %></h5></div>
     </div>
