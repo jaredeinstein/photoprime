@@ -19,6 +19,7 @@
 <% @photos.each do |p| %>
 <% name = "#{p.split('/').last}".html_safe %>
 <div class="container polaroid">
+    <%= link_to image_path image_path "polaroid-bg/#{p.split('/').last}" do %>
     <div class="row">
         <div class="twelve columns polaroid-bg" style="background-image: url('<%= image_path "polaroid-bg/#{p.split('/').last}" %>');"></div>
     </div>
@@ -34,6 +35,7 @@
         <div class="six columns center-text left"><p class="lower">album</p></div>
         <div class="six columns center-text right"><h5 class="upper"><%= name %></h5></div>
     </div>
+    <% end %>
 </div>
 <% end %>
 

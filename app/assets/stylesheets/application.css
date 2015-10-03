@@ -36,8 +36,9 @@ body {
     margin-bottom: 1rem;
 }
 
-/* add margin below title - mobile */
+/* add margin above and below title - mobile */
 div.title>div:last-child {
+    margin-top: 0.25rem;
     margin-bottom: 2rem;
 }
 
@@ -61,6 +62,13 @@ h2.upper, h5.upper, p.upper {
     text-align: center;
 }
 
+/* fix container sizing for polaroid, keep 90% until polaroid reaches 650px, then keep there for any bigger screens - mobile */
+.container.polaroid {
+    padding: 0;
+    width: 90%;
+    max-width: 650px;
+}
+
 /* polaroid background and margin */
 .polaroid {
     background-color: white;
@@ -68,10 +76,10 @@ h2.upper, h5.upper, p.upper {
     margin-bottom: 4.5rem;
 }
 
-/* fix container sizing for polaroid - mobile */
-.container.polaroid {
-    padding: 0;
-    width: 90%;
+/* polaroid change zoom-in cursor and black text on polaroid */
+.polaroid a {
+    cursor: zoom-in;
+    color: black;
 }
 
 /* give polaroid-bg div for image backgrounding of polaroid */
@@ -105,8 +113,9 @@ h2.upper, h5.upper, p.upper {
         margin-bottom: 0.5rem;
     }
     
-    /* add margin below title - phablet */
+    /* add margin above and below title - phablet */
     div.title>div:last-child {
+        margin-top: 1rem;
         margin-bottom: 4.5rem;
     }
 
