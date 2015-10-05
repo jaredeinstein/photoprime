@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   root 'pages#index'
   
   get 'index' => 'pages#index'
+  
+  resources :albums
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
