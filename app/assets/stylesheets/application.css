@@ -76,6 +76,14 @@ h2.upper, h5.upper, p.upper {
     margin-bottom: 4.5rem;
 }
 
+/* 3d effect to pop up and move drop shadow on polaroid */
+.polaroid:hover {
+    position: relative;
+    left: -4px;
+    top: -13px;
+    box-shadow: 15px 35px 33px 10px rgba(0,0,0,0.3);
+}
+
 /* polaroid change zoom-in cursor and black text on polaroid */
 .polaroid a {
     cursor: zoom-in;
@@ -123,7 +131,7 @@ h2.upper, h5.upper, p.upper {
     div.polaroid>div:last-child {
         margin-bottom: 1rem;
     }
-    
+
     /* right align text in left half and float - phablet */
     h2.lower, h5.lower, p.lower {
         text-align: right;
