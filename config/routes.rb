@@ -2,11 +2,32 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   
-  root 'pages#index'
+  #root 'pages#index'
+  root 'albums#index'
   
-  get 'index' => 'pages#index'
+  resources :albums do
+    resources :photos, shallow: true
+  end
   
-  resources :albums
+  
+  #########################################################
+  ############# ALT TO ABOVE ##############################
+  # resources :albums do
+  #   resources :photos, only: [:index, :new, :create]
+  # end
+  
+  # resources :photos, only: [:show, :edit, :update, :destroy]
+  #########################################################
+  
+  
+  #########################################################
+  ############# ADD BACK ##################################
+  # resources :photos do
+  #   resources :comments, shallow: true
+  # end
+  #########################################################
+
+
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

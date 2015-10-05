@@ -27,12 +27,12 @@ body {
 }
 
 /* keep left text from bumping up or down */
-.left>h2, .left>h5, .left>p {
+.left>h2, .left>h4, .left>h5, .left>p {
     margin-bottom: 0;
 }
 
 /* distance between rows of split text separated - mobile */
-.right>h2, .right>h5, .right>p {
+.right>h2, .left>h4, .right>h5, .right>p {
     margin-bottom: 1rem;
 }
 
@@ -48,12 +48,12 @@ div.polaroid>div:last-child {
 }
 
 /* make text lowercase */
-h2.lower, h5.lower, p.lower {
+h2.lower, h4.lower, h5.lower, p.lower {
     text-transform: lowercase;
 }
 
 /* make text uppercase */
-h2.upper, h5.upper, p.upper {
+h2.upper, h4.upper, h5.upper, p.upper {
     text-transform: uppercase;
 }
 
@@ -117,7 +117,7 @@ h2.upper, h5.upper, p.upper {
 /* Larger than phablet */
 @media (min-width: 550px) {
     /* distance between rows of split text separated - phablet */
-    .right>h2, .right>h5, .right>p {
+    .right>h2, .right>h4, .right>h5, .right>p {
         margin-bottom: 0.5rem;
     }
     
@@ -133,13 +133,13 @@ h2.upper, h5.upper, p.upper {
     }
 
     /* right align text in left half and float - phablet */
-    h2.lower, h5.lower, p.lower {
+    h2.lower, h4.lower, h5.lower, p.lower {
         text-align: right;
         float: right;
     }
     
     /* left align text in right half and float - phablet */
-    h2.upper, h5.upper, p.upper {
+    h2.upper, h4.upper, h5.upper, p.upper {
         text-align: left;
         float: left;
     }
