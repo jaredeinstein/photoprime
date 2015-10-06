@@ -10,14 +10,12 @@
         <% end %>
     </div>
     <div class="row">
-        <%= link_to photo_path do %>
             <div class="six columns center-text left">
                 <h6 class="lower">title</h6>
             </div>
             <div class="six columns center-text right">
-                <h5 class="upper"><%= File.basename(@photo.filename, '.*') %></h5>
+                <h4 class="upper"><%= File.basename(@photo.filename, '.*') %></h4>
             </div>
-        <% end %>
     </div>
 </div>
 
