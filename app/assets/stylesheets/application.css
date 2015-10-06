@@ -46,6 +46,10 @@ body {
     margin-bottom: 1rem;
 }
 
+.header a {
+    color: black;
+}
+
 .comment {
     margin-bottom: 3rem;
 }

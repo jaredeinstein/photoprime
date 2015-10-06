@@ -1,4 +1,4 @@
-<div class="container title">
+<div class="container header">
     <div class="row">
         <%= link_to album_path(@photo.album_id) do %>
             <div class="six columns center-text left">
@@ -10,12 +10,12 @@
         <% end %>
     </div>
     <div class="row">
-            <div class="six columns center-text left">
-                <h6 class="lower">title</h6>
-            </div>
-            <div class="six columns center-text right">
-                <h4 class="upper"><%= File.basename(@photo.filename, '.*') %></h4>
-            </div>
+        <div class="six columns center-text left">
+            <h6 class="lower">title</h6>
+        </div>
+        <div class="six columns center-text right">
+            <h4 class="upper"><%= File.basename(@photo.filename, '.*') %></h4>
+        </div>
     </div>
 </div>
 
