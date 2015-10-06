@@ -4,6 +4,14 @@
         <div class="row">
             <div class="twelve columns polaroid-bg" style="background-image: url('<%= image_path ("polaroid-bg/" + album.cover) %>');"></div>
         </div>
+        <div class="row">
+            <div class="six columns center-text left"><p class="lower">album</p></div>
+            <div class="six columns center-text right"><h5 class="upper"><%= album.title %></h5></div>
+        </div>
+        <div class="row gray">
+            <div class="six columns center-text left"><p class="lower">description</p></div>
+            <div class="six columns center-text right"><p class="upper"><%= album.description %></p></div>
+        </div>
         <div class="row gray">
             <div class="six columns center-text left"><p class="lower">author</p></div>
             <div class="six columns center-text right"><p class="upper"><%= album.author %></p></div>
@@ -11,14 +19,6 @@
         <div class="row gray">
             <div class="six columns center-text left"><p class="lower">date</p></div>
             <div class="six columns center-text right"><p class="upper"><%= album.date.strftime('%b-%d-%y') %></p></div>
-        </div>
-        <div class="row gray">
-            <div class="six columns center-text left"><p class="lower">description</p></div>
-            <div class="six columns center-text right"><p class="upper"><%= album.description %></p></div>
-        </div>
-        <div class="row">
-            <div class="six columns center-text left"><p class="lower">album</p></div>
-            <div class="six columns center-text right"><h5 class="upper"><%= album.title %></h5></div>
         </div>
         <% end %>
     </div>

@@ -1,23 +1,21 @@
 <div class="container title">
     <div class="row">
-        <%= link_to photo_path do %>
+        <%= link_to album_path(@photo.album_id) do %>
             <div class="six columns center-text left">
-                <h4 class="lower">photo</h2>
+                <h6 class="lower">album</h6>
             </div>
             <div class="six columns center-text right">
-                <h4 class="upper"><%= @photo.filename %></h2>
+                <h5 class="upper"><%= @album.title %></h5>
             </div>
         <% end %>
     </div>
-</div>
-<div class="container title">
     <div class="row">
-        <%= link_to album_path(@photo.album_id) do %>
+        <%= link_to photo_path do %>
             <div class="six columns center-text left">
-                <h4 class="lower">album</h2>
+                <h6 class="lower">title</h6>
             </div>
             <div class="six columns center-text right">
-                <h4 class="upper"><%= @album.title %></h2>
+                <h5 class="upper"><%= File.basename(@photo.filename, '.*') %></h5>
             </div>
         <% end %>
     </div>
@@ -27,6 +25,10 @@
     <div class="row">
         <div class="twelve columns polaroid-bg" style="background-image: url('<%= image_path ("polaroid-bg/" + @photo.filename) %>');"></div>
     </div>
+    <div class="row">
+        <div class="six columns center-text left"><p class="lower">description</p></div>
+        <div class="six columns center-text right"><p class="upper"><%= @photo.description %></p></div>
+    </div>
     <div class="row gray">
         <div class="six columns center-text left"><p class="lower">author</p></div>
         <div class="six columns center-text right"><p class="upper"><%= @photo.author %></p></div>
@@ -35,14 +37,14 @@
         <div class="six columns center-text left"><p class="lower">date</p></div>
         <div class="six columns center-text right"><p class="upper"><%= @photo.date_taken.strftime('%b-%d-%y %H:%M') %></p></div>
     </div>
-    <div class="row">
-        <div class="six columns center-text left"><p class="lower">description</p></div>
-        <div class="six columns center-text right"><p class="upper"><%= @photo.description %></p></div>
-    </div>
 </div>
 
 <% @comments.each do |comment| %>
-    <div class="container polaroid">
+    <div class="container comment">
+        <div class="row">
+            <div class="six columns center-text left"><h6 class="lower">comment</h6></div>
+            <div class="six columns center-text right"><h5 class="upper"><%= comment.comment %></h5></div>
+        </div>
         <div class="row gray">
             <div class="six columns center-text left"><p class="lower">author</p></div>
             <div class="six columns center-text right"><p class="upper"><%= comment.author %></p></div>
@@ -50,10 +52,6 @@
         <div class="row gray">
             <div class="six columns center-text left"><p class="lower">date</p></div>
             <div class="six columns center-text right"><p class="upper"><%= comment.updated_at.strftime('%b-%d-%y %H:%M') %></p></div>
-        </div>
-        <div class="row">
-            <div class="six columns center-text left"><p class="lower">comment</p></div>
-            <div class="six columns center-text right"><p class="upper"><%= comment.comment %></p></div>
         </div>
     </div>
 <% end %>

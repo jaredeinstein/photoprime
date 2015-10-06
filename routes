@@ -1,34 +1,18 @@
-           Prefix Verb   URI Pattern                              Controller#Action
-             root GET    /                                        albums#index
-     album_photos GET    /albums/:album_id/photos(.:format)       photos#index
-                  POST   /albums/:album_id/photos(.:format)       photos#create
-  new_album_photo GET    /albums/:album_id/photos/new(.:format)   photos#new
-       edit_photo GET    /photos/:id/edit(.:format)               photos#edit
-            photo GET    /photos/:id(.:format)                    photos#show
-                  PATCH  /photos/:id(.:format)                    photos#update
-                  PUT    /photos/:id(.:format)                    photos#update
-                  DELETE /photos/:id(.:format)                    photos#destroy
-           albums GET    /albums(.:format)                        albums#index
-                  POST   /albums(.:format)                        albums#create
-        new_album GET    /albums/new(.:format)                    albums#new
-       edit_album GET    /albums/:id/edit(.:format)               albums#edit
-            album GET    /albums/:id(.:format)                    albums#show
-                  PATCH  /albums/:id(.:format)                    albums#update
-                  PUT    /albums/:id(.:format)                    albums#update
-                  DELETE /albums/:id(.:format)                    albums#destroy
-   photo_comments GET    /photos/:photo_id/comments(.:format)     comments#index
-                  POST   /photos/:photo_id/comments(.:format)     comments#create
-new_photo_comment GET    /photos/:photo_id/comments/new(.:format) comments#new
-     edit_comment GET    /comments/:id/edit(.:format)             comments#edit
-          comment GET    /comments/:id(.:format)                  comments#show
-                  PATCH  /comments/:id(.:format)                  comments#update
-                  PUT    /comments/:id(.:format)                  comments#update
-                  DELETE /comments/:id(.:format)                  comments#destroy
-           photos GET    /photos(.:format)                        photos#index
-                  POST   /photos(.:format)                        photos#create
-        new_photo GET    /photos/new(.:format)                    photos#new
-                  GET    /photos/:id/edit(.:format)               photos#edit
-                  GET    /photos/:id(.:format)                    photos#show
-                  PATCH  /photos/:id(.:format)                    photos#update
-                  PUT    /photos/:id(.:format)                    photos#update
-                  DELETE /photos/:id(.:format)                    photos#destroy
+         Prefix Verb   URI Pattern                            Controller#Action
+           root GET    /                                      albums#index
+   album_photos GET    /albums/:album_id/photos(.:format)     photos#index
+                POST   /albums/:album_id/photos(.:format)     photos#create
+new_album_photo GET    /albums/:album_id/photos/new(.:format) photos#new
+     edit_photo GET    /photos/:id/edit(.:format)             photos#edit
+          photo GET    /photos/:id(.:format)                  photos#show
+                PATCH  /photos/:id(.:format)                  photos#update
+                PUT    /photos/:id(.:format)                  photos#update
+                DELETE /photos/:id(.:format)                  photos#destroy
+         albums GET    /albums(.:format)                      albums#index
+                POST   /albums(.:format)                      albums#create
+      new_album GET    /albums/new(.:format)                  albums#new
+     edit_album GET    /albums/:id/edit(.:format)             albums#edit
+          album GET    /albums/:id(.:format)                  albums#show
+                PATCH  /albums/:id(.:format)                  albums#update
+                PUT    /albums/:id(.:format)                  albums#update
+                DELETE /albums/:id(.:format)                  albums#destroy

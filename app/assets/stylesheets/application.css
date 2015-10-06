@@ -27,20 +27,32 @@ body {
 }
 
 /* keep left text from bumping up or down */
-.left>h2, .left>h4, .left>h5, .left>p {
+.left>h1, .left>h2, .left>h3, .left>h4, .left>h5, .left>h6, .left>p {
     margin-bottom: 0;
 }
 
 /* distance between rows of split text separated - mobile */
-.right>h2, .left>h4, .right>h5, .right>p {
+.right>h1, .right>h2, .right>h3, .right>h4, .right>h5, .right>h6, .right>p {
     margin-bottom: 1rem;
 }
 
 /* add margin above and below title - mobile */
-div.title>div:last-child {
+.title {
     margin-top: 0.25rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
+
+.header {
+    margin-bottom: 1rem;
+}
+
+.comment {
+    margin-bottom: 3rem;
+}
+
+/*.comment>div:last-child {*/
+/*    border-bottom: 1px solid #eee;*/
+/*}*/
 
 /* add margin below polaroid - mobile */
 div.polaroid>div:last-child {
@@ -48,12 +60,12 @@ div.polaroid>div:last-child {
 }
 
 /* make text lowercase */
-h2.lower, h4.lower, h5.lower, p.lower {
+h1.lower, h2.lower, h3.lower, h4.lower, h5.lower, h6.lower, p.lower {
     text-transform: lowercase;
 }
 
 /* make text uppercase */
-h2.upper, h4.upper, h5.upper, p.upper {
+h1.upper, h2.upper, h3.upper, h4.upper, h5.upper, h6.upper, p.upper {
     text-transform: uppercase;
 }
 
@@ -62,31 +74,26 @@ h2.upper, h4.upper, h5.upper, p.upper {
     text-align: center;
 }
 
-/* fix container sizing for polaroid, keep 90% until polaroid reaches 650px, then keep there for any bigger screens - mobile */
+/* fix container sizing for polaroid, keep 90% until polaroid reaches 650px, then keep there for any bigger screens, background and margins - mobile */
 .container.polaroid {
     padding: 0;
     width: 90%;
     max-width: 650px;
-}
-
-/* polaroid background and margin */
-.polaroid {
     background-color: white;
     box-shadow: 7px 7px 14px 4px rgba(0,0,0,0.33);
-    margin-bottom: 4.5rem;
+    margin-bottom: 3rem;
 }
 
 /* 3d effect to pop up and move drop shadow on polaroid */
-.polaroid:hover {
-    position: relative;
-    left: -4px;
-    top: -13px;
-    box-shadow: 15px 35px 33px 10px rgba(0,0,0,0.3);
-}
+/*.polaroid:hover {*/
+/*    position: relative;*/
+/*    left: -1px;*/
+/*    top: -3px;*/
+/*    box-shadow: 15px 35px 33px 10px rgba(0,0,0,0.3);*/
+/*}*/
 
 /* polaroid change zoom-in cursor and black text on polaroid */
 .polaroid a {
-    cursor: zoom-in;
     color: black;
 }
 
@@ -117,13 +124,24 @@ h2.upper, h4.upper, h5.upper, p.upper {
 /* Larger than phablet */
 @media (min-width: 550px) {
     /* distance between rows of split text separated - phablet */
-    .right>h2, .right>h4, .right>h5, .right>p {
+    .right>h1, .right>h2, .right>h3, .right>h4, .right>h5, .right>h6, .right>p {
         margin-bottom: 0.5rem;
     }
     
     /* add margin above and below title - phablet */
-    div.title>div:last-child {
+    .title {
         margin-top: 1rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .header {
+        margin-bottom: 2rem;
+    }
+    .comment {
+        margin-bottom: 4rem;
+    }
+    
+    .container.polaroid {
         margin-bottom: 4.5rem;
     }
 
@@ -133,13 +151,13 @@ h2.upper, h4.upper, h5.upper, p.upper {
     }
 
     /* right align text in left half and float - phablet */
-    h2.lower, h4.lower, h5.lower, p.lower {
+    h1.lower, h2.lower, h3.lower, h4.lower, h5.lower, h6.lower, p.lower {
         text-align: right;
         float: right;
     }
     
     /* left align text in right half and float - phablet */
-    h2.upper, h4.upper, h5.upper, p.upper {
+    h1.upper, h2.upper, h3.upper, h4.upper, h5.upper, h6.upper, p.upper {
         text-align: left;
         float: left;
     }
