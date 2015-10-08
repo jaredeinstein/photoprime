@@ -27,19 +27,37 @@
 <body>
 
 <div class="container title">
-    <div class="row">
+    <div class="row split-text">
         <%= link_to root_path do %>
-            <div class="six columns center-text left">
-                <h2 class="lower">Photo</h2>
-            </div>
-            <div class="six columns center-text right">
-                <h2 class="upper">Prime</h2>
-            </div>
+            <div class="six columns"><h2 class="lower center-text left">Photo</h2></div>
+            <div class="six columns"><h2 class="upper center-text right">Prime</h2></div>
         <% end %>
     </div>
 </div>
 
-<%= yield %>
+<!-- added this in so that i could take out the repetitveness of having it in all views.  take out here, have to add back to all views.  but allows to scale without a sidebar -->
+<%= render "layouts/sidebar" %>
+
+<% if content_for?(:sidebar) %>
+    <div class="container content">
+        <div class="row">
+            <div class="eight columns main">
+                <%= yield %>
+            </div>
+            <div class="four columns sidebar">
+                <%= yield :sidebar %>
+            </div>
+        </div>
+    </div>
+<% else %>
+    <div class="container content">
+        <div class="row">
+            <div class="twelve columns main">
+                <%= yield %>
+            </div>
+        </div>
+    </div>
+<% end %>
 
 </body>
 </html>

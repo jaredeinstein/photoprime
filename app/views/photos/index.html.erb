@@ -1,36 +1,7 @@
-<div class="container header">
-    <div class="row">
-        <div class="six columns center-text left">
-            <h6 class="lower">album</h6>
-        </div>
-        <div class="six columns center-text right">
-            <h5 class="upper"><%= @album.title %></h5>
-        </div>
-    </div>
-</div>
-
 <% @photos.each do |photo| %>
-    <div class="container polaroid">
-        <%= link_to photo do %>
-        <div class="row">
-            <div class="twelve columns polaroid-bg" style="background-image: url('<%= image_path ("polaroid-bg/" + photo.filename) %>');"></div>
-        </div>
-        <div class="row">
-            <div class="six columns center-text left"><p class="lower">title</p></div>
-            <div class="six columns center-text right"><h5 class="upper"><%= File.basename(photo.filename, '.*') %></h5></div>
-        </div>
-        <div class="row">
-            <div class="six columns center-text left"><p class="lower">description</p></div>
-            <div class="six columns center-text right"><h6 class="upper"><%= photo.description %></h6></div>
-        </div>
-        <div class="row gray">
-            <div class="six columns center-text left"><p class="lower">author</p></div>
-            <div class="six columns center-text right"><p class="upper"><%= photo.author %></p></div>
-        </div>
-        <div class="row gray">
-            <div class="six columns center-text left"><p class="lower">date</p></div>
-            <div class="six columns center-text right"><p class="upper"><%= photo.date_taken.strftime('%b-%d-%y %H:%M') %></p></div>
-        </div>
-        <% end %>
-    </div>
+    <%= link_to photo do %>
+        <%= render partial: "photo", locals: { photo: photo } %>
+    <% end %>
 <% end %>
+
+<%= render partial: "photo_sidebar", locals: { album: @album } %>

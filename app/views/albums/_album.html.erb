@@ -1,0 +1,23 @@
+<div class="container polaroid u-full-width">
+    <%= link_to album_photos_path(album) do %>
+    <div class="row">
+        <div class="twelve columns polaroid-bg" style="background-image: url('<%= image_path ("polaroid-bg/" + album.cover) %>');"></div>
+    </div>
+    <div class="row split-text">
+        <div class="six columns"><p class="lower center-text left">album</p></div>
+        <div class="six columns"><h5 class="upper center-text right"><%= album.title %></h5></div>
+    </div>
+    <div class="row split-text gray">
+        <div class="six columns"><p class="lower center-text left">description</p></div>
+        <div class="six columns"><p class="upper center-text right"><%= album.description %></p></div>
+    </div>
+    <div class="row split-text gray">
+        <div class="six columns"><p class="lower center-text left">author</p></div>
+        <div class="six columns"><p class="upper center-text right"><%= album.author %></p></div>
+    </div>
+    <div class="row split-text gray">
+        <div class="six columns"><p class="lower center-text left">date</p></div>
+        <div class="six columns"><p class="upper center-text right"><%= album.date.strftime('%b-%d-%y') %></p></div>
+    </div>
+    <% end %>
+</div>

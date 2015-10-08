@@ -1,0 +1,14 @@
+<div class="container comment u-full-width">
+    <div class="row split-text">
+        <div class="six columns"><h6 class="lower center-text left">comment</h6></div>
+        <div class="six columns"><h5 class="upper center-text right"><%= comment.comment %></h5></div>
+    </div>
+    <div class="row split-text gray">
+        <div class="six columns"><p class="lower center-text left">author</p></div>
+        <div class="six columns"><p class="upper center-text right"><%= comment.author %></p></div>
+    </div>
+    <div class="row split-text gray">
+        <div class="six columns"><p class="lower center-text left">date</p></div>
+        <div class="six columns"><p class="upper center-text right"><%= comment.updated_at.strftime('%b-%d-%y %H:%M') %></p></div>
+    </div>
+</div>

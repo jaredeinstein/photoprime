@@ -1,0 +1,20 @@
+<% content_for :sidebar do %>
+    <% if defined?(album) %>
+        <div class="row">
+            <div class="twelve columns">
+                <div class="header-content">
+                    <h6>album:  </h6><h5><%= album.title %></h5>
+                </div>
+            </div>
+        </div>
+    <% end %>
+    <% if defined?(photo) %>
+        <div class="row">
+            <div class="twelve columns">
+                <div class="header-content">
+                    <h6>title:  </h6><h5><%= File.basename(photo.filename, '.*') %></h5>
+                </div>
+            </div>
+        </div>
+    <% end %>
+<% end %>

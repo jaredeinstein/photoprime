@@ -1,0 +1,21 @@
+<div class="container polaroid u-full-width">
+    <div class="row">
+        <div class="twelve columns polaroid-bg" style="background-image: url('<%= image_path ("polaroid-bg/" + photo.filename) %>');"></div>
+    </div>
+    <div class="row split-text">
+        <div class="six columns"><p class="lower center-text left">title</p></div>
+        <div class="six columns"><h5 class="upper center-text right"><%= File.basename(photo.filename, '.*') %></h5></div>
+    </div>
+    <div class="row split-text">
+        <div class="six columns"><p class="lower center-text left">description</p></div>
+        <div class="six columns"><h6 class="upper center-text right"><%= photo.description %></h6></div>
+    </div>
+    <div class="row split-text gray">
+        <div class="six columns"><p class="lower center-text left">author</p></div>
+        <div class="six columns"><p class="upper center-text right"><%= photo.author %></p></div>
+    </div>
+    <div class="row split-text gray">
+        <div class="six columns"><p class="lower center-text left">date</p></div>
+        <div class="six columns"><p class="upper center-text right"><%= photo.date_taken.strftime('%b-%d-%y %H:%M') %></p></div>
+    </div>
+</div>

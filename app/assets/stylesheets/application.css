@@ -26,50 +26,53 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#8f8f8f', GradientType=1 );
 }
 
-/* keep left text from bumping up or down */
-.left>h1, .left>h2, .left>h3, .left>h4, .left>h5, .left>h6, .left>p {
+h1, h2, h3, h4, h5, h6, p {
     margin-bottom: 0;
-}
-
-/* distance between rows of split text separated - mobile */
-.right>h1, .right>h2, .right>h3, .right>h4, .right>h5, .right>h6, .right>p {
-    margin-bottom: 1rem;
 }
 
 /* add margin above and below title - mobile */
 .title {
-    margin-top: 0.25rem;
-    margin-bottom: 1rem;
+    background-color: white;
+    box-shadow: 7px 7px 14px 4px rgba(0,0,0,0.33);
+    padding: 1rem 0 1.5rem 0;
+    margin-bottom: 3rem;
+}
+
+.title h2 {
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.33);
 }
 
 .header {
-    margin-bottom: 1rem;
+    padding: 10px;
+    margin-bottom: 3rem;
+    max-width: 700px;
+    background-color: white;
+    box-shadow: 7px 7px 14px 4px rgba(0,0,0,0.33);
+}
+
+.header-content * {
+    padding-right: 1rem;
+    display: inline;
 }
 
 .header a {
     color: black;
 }
 
-.comment {
+.sidebar {
+    background-color: white;
+    box-shadow: 7px 7px 14px 4px rgba(0,0,0,0.33);
+    padding: 1rem 1rem 1.5rem;
     margin-bottom: 3rem;
 }
 
-/*.comment>div:last-child {*/
-/*    border-bottom: 1px solid #eee;*/
-/*}*/
-
-/* add margin below polaroid - mobile */
-div.polaroid>div:last-child {
-    margin-bottom: 1rem;
-}
-
 /* make text lowercase */
-h1.lower, h2.lower, h3.lower, h4.lower, h5.lower, h6.lower, p.lower {
+.lower {
     text-transform: lowercase;
 }
 
 /* make text uppercase */
-h1.upper, h2.upper, h3.upper, h4.upper, h5.upper, h6.upper, p.upper {
+.upper {
     text-transform: uppercase;
 }
 
@@ -78,26 +81,21 @@ h1.upper, h2.upper, h3.upper, h4.upper, h5.upper, h6.upper, p.upper {
     text-align: center;
 }
 
+.split-text {
+    margin-bottom: 1rem;
+}
+
 /* fix container sizing for polaroid, keep 90% until polaroid reaches 650px, then keep there for any bigger screens, background and margins - mobile */
-.container.polaroid {
-    padding: 0;
-    width: 90%;
-    max-width: 650px;
+.polaroid {
+    padding: 0 0 2rem 0;
+    max-width: 700px;
     background-color: white;
     box-shadow: 7px 7px 14px 4px rgba(0,0,0,0.33);
     margin-bottom: 3rem;
 }
 
-/* 3d effect to pop up and move drop shadow on polaroid */
-/*.polaroid:hover {*/
-/*    position: relative;*/
-/*    left: -1px;*/
-/*    top: -3px;*/
-/*    box-shadow: 15px 35px 33px 10px rgba(0,0,0,0.3);*/
-/*}*/
-
 /* polaroid change zoom-in cursor and black text on polaroid */
-.polaroid a {
+a > .polaroid  {
     color: black;
 }
 
@@ -114,6 +112,14 @@ h1.upper, h2.upper, h3.upper, h4.upper, h5.upper, h6.upper, p.upper {
     border: 15px solid white;
 }
 
+.comment {
+    padding: 10px;
+    margin-bottom: 3rem;
+    max-width: 700px;
+    background-color: white;
+    box-shadow: 7px 7px 14px 4px rgba(0,0,0,0.33);
+}
+
 /* gray text */
 .gray {
     color: #92A0AD;
@@ -127,16 +133,6 @@ h1.upper, h2.upper, h3.upper, h4.upper, h5.upper, h6.upper, p.upper {
 
 /* Larger than phablet */
 @media (min-width: 550px) {
-    /* distance between rows of split text separated - phablet */
-    .right>h1, .right>h2, .right>h3, .right>h4, .right>h5, .right>h6, .right>p {
-        margin-bottom: 0.5rem;
-    }
-    
-    /* add margin above and below title - phablet */
-    .title {
-        margin-top: 1rem;
-        margin-bottom: 2.5rem;
-    }
     
     .header {
         margin-bottom: 2rem;
@@ -145,30 +141,27 @@ h1.upper, h2.upper, h3.upper, h4.upper, h5.upper, h6.upper, p.upper {
         margin-bottom: 4rem;
     }
     
-    .container.polaroid {
+    .polaroid {
         margin-bottom: 4.5rem;
     }
 
-    /* add margin below title - phablet */
-    div.polaroid>div:last-child {
-        margin-bottom: 1rem;
+    .split-text {
+        margin-bottom: 0;
     }
-
-    /* right align text in left half and float - phablet */
-    h1.lower, h2.lower, h3.lower, h4.lower, h5.lower, h6.lower, p.lower {
+    
+    /* fix spacing between split text -phablet */
+    .split-text>div, .split-text>a>div {
+        margin-left: 1%;
+    }
+    
+    .split-text .lower {
         text-align: right;
         float: right;
     }
     
-    /* left align text in right half and float - phablet */
-    h1.upper, h2.upper, h3.upper, h4.upper, h5.upper, h6.upper, p.upper {
+    .split-text .upper {
         text-align: left;
         float: left;
-    }
-    
-    /* fix spacing between split text -phablet */
-    .right {
-        margin-left: 1%;
     }
 }
 
