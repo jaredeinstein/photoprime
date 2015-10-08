@@ -1,5 +1,4 @@
 <div class="container polaroid u-full-width">
-    <%= link_to album_photos_path(album) do %>
     <div class="row">
         <div class="twelve columns polaroid-bg" style="background-image: url('<%= image_path ("polaroid-bg/" + album.cover) %>');"></div>
     </div>
@@ -19,5 +18,4 @@
         <div class="six columns"><p class="lower center-text left">date</p></div>
         <div class="six columns"><p class="upper center-text right"><%= album.date.strftime('%b-%d-%y') %></p></div>
     </div>
-    <% end %>
 </div>

@@ -1,1 +1,5 @@
-<%= render @albums %>
+<% @albums.each do |album| %>
+    <%= link_to album do %>
+        <%= render partial: "album", locals: { album: album } %>
+    <% end %>
+<% end %>
